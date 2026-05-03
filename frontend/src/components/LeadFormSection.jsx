@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import axios from "axios";
 import { CheckCircle, Phone, MessageCircle } from "lucide-react";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const STEPS = [
 {
@@ -49,7 +46,25 @@ export default function LeadFormSection() {
     }
     setLoading(true);
     try {
-      await axios.post(`${BACKEND_URL}/api/leads`, form);
+      const formData = new FormData();
+      formData.append("form-name", "lead-form");
+      formData.append("name", form.name);
+      formData.append("phone", form.phone);
+      formData.append("looking_for", form.looking_for);
+      formData.append(
+        "whatsapp_updates",
+        form.whatsapp_updates ? "true" : "false"
+      );
+
+      const response = await fetch("/", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
       setSubmitted(true);
       toast.success("Thanks! We'll call you within 2 hours.");
     } catch (err) {
@@ -74,7 +89,8 @@ export default function LeadFormSection() {
                   We'll call you within 2 hours with options matched to your needs.
                 </p>
 
-                <form onSubmit={handleSubmit} data-testid="lead-form" className="space-y-4">
+                <form onSubmit={handleSubmit} method="POST" name="lead-form" data-netlify="true" data-testid="lead-form" className="space-y-4">
+                  <input type="hidden" name="form-name" value="lead-form" />
                   {/* Name */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
