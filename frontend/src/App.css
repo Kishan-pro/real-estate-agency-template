@@ -1,0 +1,40 @@
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Fade up animation for sections */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+/* Smooth scrolling for the page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero parallax helper */
+.hero-bg {
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+}

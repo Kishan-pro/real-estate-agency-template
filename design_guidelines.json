@@ -1,0 +1,126 @@
+{
+  "brand_identity": {
+    "name": "Kishan Real Estates",
+    "tagline": "Your Trusted Property Partner in BEML Layout and Rajarajeshwari Nagar",
+    "tone": "Professional, Friendly, Trusted Neighbor, Expert",
+    "mission": "To capture serious property inquiries through trust and clarity."
+  },
+  "design_philosophy": {
+    "archetype": "Organic & Earthy (Trust/Growth) mixed with Swiss Utility",
+    "core_principles": [
+      "Fusion over Imitation: Mix Real Estate Reliability with Modern Hospitality.",
+      "Emotion First: Every section must build trust.",
+      "Content is King: Direct, clear communication without aggressive sales tactics.",
+      "Negative Space: Use generous padding to signal luxury and calm."
+    ],
+    "anti_patterns": [
+      "No aggressive countdown timers.",
+      "No pop-ups.",
+      "No generic 'blue' everywhere - balance with warm gray and gold.",
+      "No clutter - keep the form simple."
+    ]
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "primary": "#2563EB",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#F3F4F6",
+      "secondary_foreground": "#1F2937",
+      "accent": "#D4A574",
+      "accent_foreground": "#FFFFFF",
+      "background": "#FFFFFF",
+      "foreground": "#1F2937",
+      "muted": "#F9FAFB",
+      "muted_foreground": "#6B7280",
+      "border": "#E5E7EB",
+      "input": "#F3F4F6",
+      "ring": "#2563EB"
+    },
+    "typography": {
+      "font_family_heading": "Poppins, sans-serif",
+      "font_family_body": "Inter, sans-serif",
+      "scale": {
+        "h1": "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "body_large": "text-lg md:text-xl leading-relaxed",
+        "body": "text-base leading-relaxed text-gray-600",
+        "small": "text-sm font-medium text-gray-500 uppercase tracking-wider"
+      }
+    }
+  },
+  "layout_strategies": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_spacing": "py-16 md:py-24",
+    "grid_system": {
+      "properties": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+      "features": "grid grid-cols-1 md:grid-cols-3 gap-8",
+      "bento_features": "grid grid-cols-1 md:grid-cols-6 gap-6"
+    }
+  },
+  "components": {
+    "navbar": {
+      "style": "sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60",
+      "elements": [
+        "Logo (Left): Text 'Kishan Real Estates' with Lucide 'House' icon replacing the 'H'. Colors: Deep Blue (#1E3A8A) and Cyan/Teal (#06B6D4).",
+        "Desktop Links (Center): Hidden on mobile, visible on md+.",
+        "Mobile Menu (Right): Hamburger icon triggering a sheet/drawer."
+      ]
+    },
+    "hero": {
+      "style": "relative overflow-hidden bg-secondary/30 pt-16 md:pt-24 lg:pt-32 pb-16",
+      "layout": "Two-column on desktop: Left Content (Headline, Subhead, Trust Indicators), Right Form (Sticky Lead Capture).",
+      "visuals": "Background pattern or subtle gradient. Hero image of a modern home blended or placed as a featured visual."
+    },
+    "buttons": {
+      "primary": "bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-md px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5",
+      "secondary": "bg-white text-[#1F2937] border border-gray-200 hover:bg-gray-50 hover:border-gray-300 rounded-md px-6 py-3 font-medium transition-colors",
+      "whatsapp": "bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-4 fixed bottom-6 right-6 shadow-2xl z-50 hover:scale-110 transition-transform"
+    },
+    "cards": {
+      "property": "group overflow-hidden rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1. Image aspect-video. Content p-6.",
+      "feature": "bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:border-blue-100 transition-colors"
+    },
+    "form": {
+      "style": "bg-white rounded-xl shadow-2xl p-8 border border-gray-100",
+      "fields": ["Name", "Phone (Mobile)", "Email", "Property Interest (Buy/Sell/Rent)"],
+      "button_text": "Get a Call Back"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1760067537255-64d36262cb0a?q=80&w=2000&auto=format&fit=crop",
+      "listing_1": "https://images.unsplash.com/photo-1757264141891-132e7a714ab4?q=80&w=800&auto=format&fit=crop",
+      "listing_2": "https://images.unsplash.com/photo-1663756915301-2ba688e078cf?q=80&w=800&auto=format&fit=crop",
+      "listing_3": "https://images.unsplash.com/photo-1757439402214-2311405d70bd?q=80&w=800&auto=format&fit=crop",
+      "listing_4": "https://images.unsplash.com/photo-1600596542815-2495db98dada?q=80&w=800&auto=format&fit=crop",
+      "listing_5": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
+      "listing_6": "https://images.unsplash.com/photo-1600566753086-00f18cf27f43?q=80&w=800&auto=format&fit=crop",
+      "family_trust": "https://images.unsplash.com/photo-1758523671826-d7f8217ffac3?q=80&w=800&auto=format&fit=crop",
+      "founder_placeholder": "https://ui.shadcn.com/avatars/02.png"
+    },
+    "icons": "Use Lucide React (House, Phone, MapPin, Star, ShieldCheck, Users, Key, ChevronDown, Menu, X, CheckCircle)"
+  },
+  "accessibility": {
+    "contrast": "Ensure text is #1F2937 or darker on light backgrounds.",
+    "focus_states": "All interactive elements must have a visible focus ring (blue-500).",
+    "aria_labels": "Buttons with icons only (like WhatsApp) must have aria-label.",
+    "alt_text": "All property images must have descriptive alt text."
+  },
+  "instructions_to_main_agent": [
+    "1. Setup: Install 'lucide-react', 'framer-motion' (for subtle entrances), '@radix-ui/react-accordion', 'clsx', 'tailwind-merge'.",
+    "2. Logo Implementation: Create a component <Logo /> that renders the text 'Kishan Real Estates' but replaces the 'H' with a styled <House /> icon from lucide-react. Use the specified colors.",
+    "3. Hero Section: Build a high-trust hero. headline: 'Find Your Dream Home in BEML Layout & RR Nagar'. Subhead: 'Trust the local experts with 12+ years of experience.'. The Lead Form should be visible immediately on desktop.",
+    "4. Navigation: Ensure Smooth Scroll to sections (#properties, #about, #contact).",
+    "5. Mobile: Ensure the 'Call' and 'WhatsApp' buttons are easily accessible on mobile (sticky bottom bar or prominent in nav).",
+    "6. Maps: Use a simple Button 'Open in Google Maps' linking to the address coordinates, do not embed an iframe to keep performance high.",
+    "7. Testing: Add data-testid to the form, submit button, and nav links."
+  ],
+  "universal_guidelines": [
+    "Do not use generic gradients.",
+    "Use plenty of whitespace (p-12, p-16, p-24) between sections.",
+    "Animation should be 'fade-up' with small distance (20px) and duration (0.5s).",
+    "Use 'sonner' for form submission success/error toasts."
+  ]
+}
