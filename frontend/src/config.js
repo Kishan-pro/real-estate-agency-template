@@ -1,7 +1,7 @@
 // Centralized configuration for the real estate agency template
 const config = {
   // Agency Information
-  agencyName: "BEML Homes Expert",
+  agencyName: "Kishan Real Estate",
   phone: "8310216700",
   whatsapp: "8310216700",
   location: "Bengaluru",
@@ -18,7 +18,7 @@ const config = {
 
   // About Section
   about: {
-    title: "Why Choose BEML Homes Expert?",
+    title: "Why Choose Kishan Real Estate?",
     subtitle: "Your trusted partner for all real estate needs in Bengaluru.",
     stats: {
       familiesHelped: "500+",
@@ -46,38 +46,38 @@ const config = {
       {
         title: "Residential Properties",
         description: "Buy, sell, or rent apartments, houses, and villas across Bengaluru.",
-        iconBg: "bg-blue-50",
-        iconColor: "text-blue-600",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
       {
         title: "Commercial Properties",
         description: "Help with office spaces, retail shops, and commercial property deals.",
-        iconBg: "bg-purple-50",
-        iconColor: "text-purple-600",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
       {
         title: "Land & Agricultural",
         description: "Support with land buying, selling, and paperwork for farms and plots.",
-        iconBg: "bg-green-50",
-        iconColor: "text-green-600",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
       {
         title: "Property Registration & Legal",
         description: "Paperwork, registration, legal advice, and help with BBMP and BDA.",
-        iconBg: "bg-orange-50",
-        iconColor: "text-orange-600",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
       {
         title: "Property Value Checks",
         description: "We tell you the fair price of any property so you don't overpay.",
-        iconBg: "bg-red-50",
-        iconColor: "text-red-500",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
       {
         title: "Investment Advice",
         description: "Invest wisely in properties that will grow in value and give good rental income.",
-        iconBg: "bg-teal-50",
-        iconColor: "text-teal-600",
+        iconBg: "bg-primary/10",
+        iconColor: "text-primary",
       },
     ]
   },
@@ -156,7 +156,7 @@ const config = {
     sectionTitle: "Contact",
     title: "Get In Touch",
     subtitle: "We're available Monday – Sunday, 8:00 AM – 8:30 PM. Response within 2 hours.",
-    whatsappMessage: "Hi Kishan, I'd like to know more about Kishan Real Estates"
+    whatsappMessage: "Hi Kishan, I'd like to know more about Kishan Real Estate"
   },
 
   // Lead Form Section

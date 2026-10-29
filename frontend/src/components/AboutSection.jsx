@@ -10,15 +10,15 @@ const PROMISES = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-white" data-testid="about-section">
+    <section id="about" className="py-16 md:py-24 bg-card" data-testid="about-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
             About Us
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Meet Kishan Pawar – Founder, Kishan Real Estates
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+            Meet Kishan Pawar – Founder, Kishan Real Estate
           </h2>
         </div>
 
@@ -30,7 +30,7 @@ export default function AboutSection() {
               <div className="w-48 h-48 rounded-2xl border-4 border-white shadow-xl overflow-hidden">
                 <img
                   src="/founder.jpg"
-                  alt="Kishan Pawar – Founder, Kishan Real Estates"
+                  alt="Kishan Pawar – Founder, Kishan Real Estate"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -40,20 +40,20 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-1">Kishan Pawar</h3>
-            <p className="text-blue-600 text-sm font-medium mb-5">
+            <h3 className="text-xl font-bold text-foreground mb-1">Kishan Pawar</h3>
+            <p className="text-primary text-sm font-medium mb-5">
               Founder &amp; Property Consultant
             </p>
 
-            <p className="!text-sm !text-left mb-4 text-gray-600">
-              Kishan has <strong className="text-gray-800">20+ years of experience</strong> in marketing and real estate, with strong expertise in property dealings and documentation. Known for his dedication and client-first approach, he ensures smooth and transparent property transactions.
+            <p className="!text-sm !text-left mb-4 text-muted-foreground">
+              Kishan has <strong className="text-foreground">20+ years of experience</strong> in marketing and real estate, with strong expertise in property dealings and documentation. Known for his dedication and client-first approach, he ensures smooth and transparent property transactions.
             
 
             </p>
-            <p className="!text-sm !text-left mb-6 text-gray-600">
+            <p className="!text-sm !text-left mb-6 text-muted-foreground">
               Beyond real estate, he is actively involved in environmental initiatives as a core member of ICARE RR Nagar and Namma Vrishabhavathi, contributing to tree plantations and lake rejuvenation projects across Bengaluru.
               {" "}
-              <strong className="text-gray-800"></strong> 
+              <strong className="text-foreground"></strong> 
             </p>
 
             {/* LinkedIn */}
@@ -61,7 +61,7 @@ export default function AboutSection() {
               href="https://www.linkedin.com/in/kishan-pawar-realestates/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 border border-blue-200 rounded-xl px-4 py-2.5 hover:bg-blue-50 transition-colors"
+              className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary border border-border rounded-xl px-4 py-2.5 hover:bg-primary/10 transition-colors"
               data-testid="founder-linkedin">
 
               <Linkedin size={16} />
@@ -69,37 +69,37 @@ export default function AboutSection() {
             </a>
           </div>
 
-          {/* Kishan Real Estates Info + Promises */}
+          {/* Kishan Real Estate Info + Promises */}
           <div>
             {/* Stats */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-6 border border-gray-100">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">About Kishan Real Estates</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                Kishan Real Estates has been helping families since 2012. We believe buying or selling property
+            <div className="bg-secondary/60 rounded-2xl p-6 mb-6 border border-border">
+              <h3 className="text-lg font-bold text-foreground mb-3">About Kishan Real Estate</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                Kishan Real Estate has been helping families since 2012. We believe buying or selling property
                 should be simple and stress-free. We handle all the hard parts – paperwork, legal
                 work, negotiations – so you don't have to worry.
               </p>
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
+              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-blue-600">12+</p>
-                  <p className="text-xs text-gray-500 mt-0.5">Years Experience</p>
+                  <p className="text-2xl font-bold text-primary">12+</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Years Experience</p>
                 </div>
-                <div className="text-center border-x border-gray-200">
-                  <p className="text-2xl font-bold text-blue-600">500+</p>
-                  <p className="text-xs text-gray-500 mt-0.5">Families Helped</p>
+                <div className="text-center border-x border-border">
+                  <p className="text-2xl font-bold text-primary">500+</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Families Helped</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-blue-600">4.6★</p>
-                  <p className="text-xs text-gray-500 mt-0.5">Google Rating</p>
+                  <p className="text-2xl font-bold text-primary">4.6★</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Google Rating</p>
                 </div>
               </div>
             </div>
 
             {/* Our Promise */}
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Our Promise to You</h3>
+            <h3 className="text-lg font-bold text-foreground mb-4">Our Promise to You</h3>
             <ul className="space-y-3">
               {PROMISES.map((p, i) =>
-              <li key={i} className="flex items-center gap-3 text-sm text-gray-700">
+              <li key={i} className="flex items-center gap-3 text-sm text-foreground">
                   <CheckCircle size={17} className="text-green-500 flex-shrink-0" />
                   {p}
                 </li>
