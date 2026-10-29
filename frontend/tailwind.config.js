@@ -1,12 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import animate from "tailwindcss-animate";
+export default {
     darkMode: ["class"],
     content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
+    "./index.html"
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['Inter', 'Noto Sans Kannada', 'Noto Sans Devanagari', 'system-ui', 'sans-serif'],
+  			display: ['Playfair Display', 'Noto Serif Kannada', 'Noto Serif Devanagari', 'Georgia', 'serif']
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -78,5 +83,5 @@ module.exports = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };

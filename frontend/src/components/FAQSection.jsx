@@ -7,11 +7,11 @@ import {
 
 const FAQS = [
   {
-    q: "What services does Kishan Real Estates provide?",
+    q: "What services does Kishan Real Estate provide?",
     a: "We help with buying, selling, and renting properties. We also help with legal paperwork, property value checks, and investment advice. We work with residential and commercial properties.",
   },
   {
-    q: "How is Kishan Real Estates different from other agents?",
+    q: "How is Kishan Real Estate different from other agents?",
     a: "Kishan has 20+ years of experience and lives in this area. We give honest advice, no hidden charges, and we respond fast. You get expert help plus personal attention.",
   },
   {
@@ -38,32 +38,32 @@ const FAQS = [
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-16 md:py-24 bg-gray-50" data-testid="faq-section">
+    <section id="faq" className="py-16 md:py-24 bg-secondary/60" data-testid="faq-section">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
             FAQ
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
             Frequently Asked Questions
           </h2>
         </div>
 
         {/* Accordion */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
           <Accordion type="single" collapsible className="w-full" data-testid="faq-accordion">
             {FAQS.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
                 data-testid={`faq-item-${i + 1}`}
-                className="border-b border-gray-100 last:border-0"
+                className="border-b border-border last:border-0"
               >
-                <AccordionTrigger className="text-sm font-semibold text-gray-900 hover:no-underline hover:text-blue-600 py-4 text-left transition-colors">
+                <AccordionTrigger className="text-sm font-semibold text-foreground hover:no-underline hover:text-primary py-4 text-left transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-sm pb-4 leading-relaxed">
+                <AccordionContent className="text-muted-foreground text-sm pb-4 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

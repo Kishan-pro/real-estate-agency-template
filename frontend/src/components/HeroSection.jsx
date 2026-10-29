@@ -1,79 +1,77 @@
-import { ChevronDown } from "lucide-react";
-import config from "../config";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ChevronDown, Search, Star } from "lucide-react";
+import { useT } from "@/context/LanguageContext";
+import { PROPERTY_TYPES } from "@/lib/properties";
+import { fetchProperties, phone, useAsync, waUrl } from "@/lib/catalog";
+
+const BUDGETS = ["1", "2", "3", "4"];
+const selectCls = "w-full bg-white/95 text-neutral-900 rounded-xl px-3 py-3 text-sm border-0 focus:outline-none focus:ring-2 focus:ring-accent";
 
 export default function HeroSection() {
-  const scrollToForm = () => {
-    const el = document.getElementById("lead-form");
-    if (el) {
-      const offset = 70;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+  const { t } = useT();
+  const navigate = useNavigate();
+  const [q, setQ] = useState({ locality: "", type: "", budget: "" });
+  const { data } = useAsync(() => fetchProperties(), "all");
+  const localities = [...new Set((data ?? []).map((p) => p.locality))].sort();
+
+  const search = (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams(Object.entries(q).filter(([, v]) => v));
+    navigate(`/properties${params.size ? `?${params}` : ""}`);
   };
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center hero-bg"
+      className="relative min-h-[88vh] flex items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('https://images.unsplash.com/photo-1600596542815-2495db98dada?w=2000&q=80&auto=format&fit=crop')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed"
+        backgroundImage: `linear-gradient(rgba(10,18,40,0.62), rgba(10,18,40,0.72)), url('https://images.unsplash.com/photo-1600596542815-2495db98dada?w=2000&q=80&auto=format&fit=crop')`,
       }}
-      data-testid="hero-section">
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-20">
-        {/* Trust Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 text-sm font-medium">
-          <span className="text-yellow-400 text-base">★</span>
-          <span>4.6/5 Stars &nbsp;·&nbsp; 500+ Families Helped &nbsp;·&nbsp; 12 Years</span>
+      data-testid="hero-section"
+    >
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-24 pb-16">
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-7 text-sm font-medium">
+          <Star size={15} className="text-accent" fill="currentColor" /> {t("hero.badge")}
         </div>
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-          {config.hero.title}
-          <br />
-          <span className="!text-[#FFFFFF]">{config.hero.titleHighlight}</span>
-          <br />
-          
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-5">
+          {t("hero.title")} <span className="text-accent">{t("hero.highlight")}</span>
         </h1>
+        <p className="text-base sm:text-lg text-white/85 mb-9 max-w-2xl mx-auto leading-relaxed">{t("hero.subtitle")}</p>
 
-        {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-          {config.hero.subtitle}
-        </p>
+        <form onSubmit={search} className="bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl p-3 grid grid-cols-1 sm:grid-cols-4 gap-2 text-left">
+          <select className={selectCls} value={q.locality} onChange={(e) => setQ({ ...q, locality: e.target.value })} aria-label={t("hero.searchLocality")}>
+            <option value="">{t("hero.searchLocality")}: {t("hero.any")}</option>
+            {localities.map((l) => <option key={l} value={l}>{l}</option>)}
+          </select>
+          <select className={selectCls} value={q.type} onChange={(e) => setQ({ ...q, type: e.target.value })} aria-label={t("hero.searchType")}>
+            <option value="">{t("hero.searchType")}: {t("hero.any")}</option>
+            {PROPERTY_TYPES.map((x) => <option key={x.value} value={x.value}>{t(`type.${x.value}`)}</option>)}
+          </select>
+          <select className={selectCls} value={q.budget} onChange={(e) => setQ({ ...q, budget: e.target.value })} aria-label={t("hero.searchBudget")}>
+            <option value="">{t("hero.searchBudget")}: {t("hero.any")}</option>
+            {BUDGETS.map((b) => <option key={b} value={b}>{t(`budget.${b}`)}</option>)}
+          </select>
+          <button className="flex items-center justify-center gap-2 bg-accent text-accent-foreground font-bold rounded-xl px-4 py-3 text-sm hover:brightness-110">
+            <Search size={16} /> {t("hero.searchButton")}
+          </button>
+        </form>
 
-        {/* CTA Button */}
-        <button
-          onClick={scrollToForm}
-          className="bg-blue-600 hover:bg-blue-700 text-white text-base font-bold px-8 py-4 rounded-xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1 transform"
-          data-testid="hero-cta-btn">Tell us What You're Looking For
-
-
-        </button>
-
-        {/* Sub CTA links */}
-        <div className="mt-6 flex items-center justify-center gap-6 text-sm text-gray-300">
-          <a href={`tel:${config.phone}`} className="hover:text-white transition-colors flex items-center gap-1">
-            Call: {config.phone}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/80">
+          <a href="#lead-form" onClick={(e) => { e.preventDefault(); document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" }); }} className="underline underline-offset-4 hover:text-white" data-testid="hero-cta-btn">
+            {t("hero.cta")}
           </a>
-          <span className="text-white/30">|</span>
-          <a
-            href={`https://wa.me/91${config.whatsapp}?text=${encodeURIComponent(config.hero.whatsappMessage)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors">
-
-            WhatsApp: {config.whatsapp}
+          <a href={`tel:${phone}`} className="hover:text-white">{t("common.call")}: {phone}</a>
+          <a href={waUrl("Hi Kishan, I'd like to find a property in Bengaluru")} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            {t("common.whatsapp")}
           </a>
         </div>
 
-        {/* Scroll hint */}
-        <div className="mt-14 flex justify-center animate-bounce">
+        <div className="mt-12 flex justify-center animate-bounce">
           <ChevronDown className="text-white/50" size={28} />
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

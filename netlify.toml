@@ -3,7 +3,24 @@
   command = "npm run build"
   publish = "build"
 
+[build.environment]
+  NODE_VERSION = "22"
+
+# Single-page app: any path that is not a real file serves the app.
+# (Pre-rendered /property/<slug>/ pages are real files, so they win over this rule.)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# The service worker must always be fetched fresh so updates reach phones.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Keep the owner area out of search engines.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
